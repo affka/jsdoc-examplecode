@@ -1,14 +1,14 @@
 jsdoc-examplecode
 =================
 
-Additional JSDoc tag for place code from functions. This plugin used for defined documentation examples as real
-functions and run it's, for example (in my case), in unit tests. This is tag - alternative tutorials, where you
+Additional JSDoc tag for place code from functions as example. This plugin used for defined documentation examples as real
+functions and run it's (for example, in unit tests). This is tag - alternative for tutorials, where you
 can set links to remote tutorials.
 
-### Include plugin in config
+### Install instruction
 
 Append `examplecode.js` file plugin in dir with `conf.js` file and add to section `plugins` it.
-Also you need set param `allowUnknownTags` to true for allow examplecode custom tag. Example config:
+Also you need set param `allowUnknownTags` to `true` for allow `examplecode` custom tag. Example config:
 
 ```json
 {
@@ -28,14 +28,15 @@ Also you need set param `allowUnknownTags` to true for allow examplecode custom 
 }
 ```
 
-### Usage in code
+### Usage examplecode tag in code
 
 Define example function, which need inline include in documentation. Then add tag `@examplecode` to
 function or properties. In tag description you need set link to example function (`SayExample`).
-Also you can set namespace to function (`examples.person.SayExample`).
-Default param values will be inserted in begin on function as param with `var` define.
+Also you can set full path (with namespace) to function (`examples.person.SayExample`).
+Default param values will be inserted in begin example as param with `var` define.
 
 ```js
+// -------- Example function --------
 /**
  * @function SayExample
  * @param {string} [message='Hello World!']
@@ -44,6 +45,7 @@ function SayExample(message) {
 	console.log('You message: ' + message);
 }
 
+// -------- Source code -------------
 /**
  * Creates a new Person.
  * @class
